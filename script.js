@@ -5,10 +5,11 @@ function bringData() {
 		.then((json) => giveData(json))
 }
 
-bringData()
+
+trying()
 
 function giveData(jsonData) {
-	console.log(jsonData)
+	// console.log(jsonData)
 	jsonData.forEach((user) => {
 		document.querySelector(".data").innerHTML += `
             <a href="profile.html?userId=${user.id}">
@@ -22,6 +23,17 @@ function giveData(jsonData) {
             </a>
             `
 	})
+}
 
-	//document.querySelector(".data").innerHTML = jsonData[0].name
+// same function as bringdata() but using async/await with try/catch syntax
+async function trying(){
+    try {
+      let response = await fetch(url)
+      let data = await response.json()
+      console.log(data)
+      giveData(data)
+    }
+    catch(err) {
+      throw "something happened on the way to heaven"
+    }
 }
