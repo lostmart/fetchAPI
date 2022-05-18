@@ -28,12 +28,13 @@ a {
 	color: var(--font-color);
 }
 
-a:hover {
-	color: rgb(31, 30, 30);
+.back:hover {
+	color: var(--font-color);
+	background-color: rgb(156, 152, 152);
 }
 
 a:hover > article {
-	transform: scaleX(1);
+	transform: scale(1.005);
 	background-color: #d16969;
 }
 
@@ -49,6 +50,7 @@ a:hover > article {
 	max-width: fit-content;
 	color: white;
 	margin-left: 0.6em;
+	transition: all 300ms ease;
 }
 .data {
 	display: flex;
@@ -62,7 +64,7 @@ a:hover > article {
 	border: 1px solid #d16969;
 	margin: 0.5em 0.2em;
 	min-width: 323px;
-	transition: min-width 200ms ease-in-out;
+	transition: all 250ms ease-in-out;
 }
 
 /*   user profile rules  */
